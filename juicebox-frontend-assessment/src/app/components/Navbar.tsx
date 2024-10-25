@@ -6,6 +6,7 @@ const Navbar = () => {
     <div>
     <BackButton></BackButton>
       <h3>hey this is a navbar</h3>
+
     </div>
   )
 }
