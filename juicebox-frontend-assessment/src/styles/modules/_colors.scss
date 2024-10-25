@@ -3,3 +3,16 @@ $ivory-white: #FAFAFA;
 $pink-light: #FABBFF;
 $purple-medium: #B179FF;
 $turquoise-medium: #6DDDFF;
+$dark-black: #0C0D10;
+
+$colors:(
+    "purple-light": $purple-light,
+    "ivory-white": $ivory-white,
+    "pink-light": $pink-light,
+    "purple-medium": $purple-medium,
+    "turquoise-medium": $turquoise-medium,
+);
+
+$backgrounds:(
+    "background-dark": $dark-black
+);
