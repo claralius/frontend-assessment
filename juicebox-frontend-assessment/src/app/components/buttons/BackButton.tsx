@@ -1,13 +1,13 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { BackButton } from "../../../assets/icons/back-button.png";
+import BackButtonIcon from "../../../assets/icons/back-button.png"
 
 const BackButton = () => {
   return (
     <div>
       <button>
-        <img src={BackButton}></img>
+      <Image src={BackButtonIcon} alt="back-button" width={20} height={20} />
       </button>
     </div>
   )
