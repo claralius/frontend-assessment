@@ -7,7 +7,7 @@ const PublicHomepage = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <h1 className="general">Homepage</h1>
+      <h2 className="general">Homepage</h2>
       <Link href="/tutorial">rEDIRECT TO TUTORIALS</Link>
     </div>
   );
