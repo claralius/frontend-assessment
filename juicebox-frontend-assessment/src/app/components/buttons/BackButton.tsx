@@ -7,7 +7,7 @@ const BackButton = () => {
   return (
     <div>
       <button>
-      <Image src={BackButtonIcon} alt="back-button" width={20} height={20} />
+        <Image src={BackButtonIcon} alt="back-button" style={{ padding:0, margin:0 }}/>
       </button>
     </div>
   )

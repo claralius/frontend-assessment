@@ -1,0 +1,13 @@
+.navbar-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+
+  .company-logo-section {
+    width: max-content;
+    height: fit-content;
+    
+  }
+}
