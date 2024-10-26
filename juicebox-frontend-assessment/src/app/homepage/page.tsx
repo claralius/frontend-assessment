@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import RoundedHexagon from "../../assets/icons/rounded-hexagon.png";
 import Navbar from "../components/navbar/Navbar";
+import ContinueButton from "../components/buttons/ContinueButton";
 
 const PublicHomepage = () => {
   return (
@@ -26,10 +27,14 @@ const PublicHomepage = () => {
         <h2>Compare your thoughts on  
           <span> technology </span> 
           with current industry opinions.</h2>
-      </section>  
-      <Link href="/tutorial" style={{ color: "white" }}>
+      </section>
+
+      <section className="bottom-section">
+       <ContinueButton placeholder={"Get a reality check"} className="reality-check-btn"></ContinueButton>  
+      </section>
+      {/* <Link href="/tutorial" style={{ color: "white" }}>
         rEDIRECT TO TUTORIALS
-      </Link>
+      </Link> */}
     </div>
   );
 };

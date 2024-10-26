@@ -62,6 +62,13 @@
     }
 }
 
+.bottom-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 24px auto;
+}
+
 @media screen and (max-width: sizes.$xs) { //<475px
     .mid-section {
         font-size: 14px;
