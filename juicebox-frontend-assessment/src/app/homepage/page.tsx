@@ -6,13 +6,11 @@ import Image from "next/image";
 import RoundedHexagon from "../../assets/icons/rounded-hexagon.png";
 import Navbar from "../components/navbar/Navbar";
 import ContinueButton from "../components/buttons/ContinueButton";
-import {ReactLenis} from '@/utils/lenis'
 
 const PublicHomepage = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <ReactLenis> 
         <section className="mid-section">
           <div className="mid-text-left">
             <p className="caption-text">WA businesses feel confident about future growth </p>
@@ -37,7 +35,6 @@ const PublicHomepage = () => {
         {/* <Link href="/tutorial" style={{ color: "white" }}>
           rEDIRECT TO TUTORIALS
         </Link> */}
-      </ReactLenis>
     </div>
   );
 };
