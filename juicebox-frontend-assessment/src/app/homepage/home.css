@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "BagossTrial";
+  src: url("/fonts/BagossTRIAL/BagossStandardTRIAL-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sohne";
+  src: url("/fonts/Sohne/TestSohne-Leicht.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+p .caption-text {
+  font-family: "Sohne", sans-serif;
+  font-size: clamp(12px, 1.2vw, 14px);
+  font-weight: 400;
+  line-height: 16.2px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+p .body-text {
+  font-family: "Sohne", sans-serif;
+  font-size: clamp(14px, 1.6vw, 16px);
+  font-weight: 400;
+  line-height: 21.6px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+h2 {
+  font-family: "BagossTrial", sans-serif;
+  font-size: clamp(24px, 2vw, 30px);
+  font-weight: 400;
+  line-height: 33.6px;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+h4 {
+  font-family: "BagossTrial", sans-serif;
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 400;
+  line-height: 27.5px;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+h5 {
+  font-family: "BagossTrial", sans-serif;
+  font-size: clamp(16px, 1.5vw, 19px);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 22.8px;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+* {
+  color: white;
+}
+
+.mid-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 28px;
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+.mid-section .mid-text-left {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 100px;
+  left: 0;
+  top: 0;
+  transform: translateY(20%);
+  margin-left: 20px;
+  text-align: left;
+}
+.mid-section .mid-text-right {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 130px;
+  right: 0;
+  top: 2rem;
+  bottom: 12rem;
+  transform: translateY(50%);
+  margin-right: 20px;
+  text-align: right;
+}
+.mid-section .hexagon-image {
+  width: 274px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.text-section {
+  padding: 20px;
+  margin: 20px auto 20px auto;
+}
+.text-section h2 {
+  text-align: center;
+  white-space: normal;
+}
+.text-section h2 span {
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-image: linear-gradient(90deg, #FABBFF 0%, #B179FF 35%, #6DDDFF 83%);
+}
+
+@media screen and (max-width: 475px) {
+  .mid-section {
+    font-size: 14px;
+  }
+  h2 {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+@media screen and (min-width: 475px) {
+  .mid-section .hexagon-image {
+    width: 254px;
+  }
+}
+@media screen and (min-width: 640px) {
+  .mid-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mid-section .mid-text-left,
+  .mid-section .mid-text-right {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin: 10px 0;
+    gap: 10px;
+  }
+  .mid-section .hexagon-image {
+    width: 234px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mid-section .hexagon-image {
+    width: 214px;
+  }
+}/*# sourceMappingURL=home.css.map */

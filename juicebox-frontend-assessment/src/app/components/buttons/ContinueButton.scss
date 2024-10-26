@@ -1,0 +1,15 @@
+@use "../../../styles/modules/typography.scss" as type;
+@use "../../../styles/modules/colors.scss" as colors;
+
+.continue-button {
+  width: 350px;
+  height: 60px;
+  text-align: center;
+  padding: 19px auto;
+  border-radius: 10px;
+
+  &.reality-check-btn {
+    color: colors.$dark-black;
+    background-color: colors.$purple-light;
+  }
+}

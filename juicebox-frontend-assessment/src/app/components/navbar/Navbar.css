@@ -1,0 +1,13 @@
+.navbar-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+.navbar-section .company-logo-section {
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}/*# sourceMappingURL=Navbar.css.map */
