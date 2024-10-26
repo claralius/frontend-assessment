@@ -23,7 +23,9 @@ const PublicHomepage = () => {
         </div>
       </section>
       <section className="text-section">
-        <h2>Compare your thoughts on technology with current industry opinions.</h2>
+        <h2>Compare your thoughts on  
+          <span> technology </span> 
+          with current industry opinions.</h2>
       </section>  
       <Link href="/tutorial" style={{ color: "white" }}>
         rEDIRECT TO TUTORIALS
