@@ -1,16 +1,13 @@
-import React from 'react';
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import React from "react";
+import SwiperComponent from "../components/tutorial/SwiperComponent";
 
 const TutorialPage = () => {
   return (
-    <div>
-      <h1>tutorisl</h1>
-    </div>
-  )
-}
+    <>
+      <h1 style={{ color:'white' }}>asas</h1>
+      <SwiperComponent/>
+    </>
+  );
+};
 
-export default TutorialPage
+export default TutorialPage;
