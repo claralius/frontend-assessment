@@ -5,9 +5,14 @@ import Lottie from "lottie-react";
 import JB2G from "../../../assets/lottie/JB2G_Lottie.json";
 import "./result.scss";
 import ContinueButton from '@/app/components/buttons/ContinueButton';
+import { useRouter } from 'next/navigation';
 
 const ResultPage = () => {
     const [name, setName] = useState<string | null>(null);
+    const router = useRouter(); 
+    const handleButtonClick = () => {
+      router.push('/home'); 
+    };
 
     useEffect(()=>{
         const nameParam = new URLSearchParams(window.location.search).get('name');
@@ -26,7 +31,7 @@ const ResultPage = () => {
         </h5>
       </section>
       <section className='result-bottom-section'>
-        <ContinueButton placeholder={'Continue'} className='result-continue-btn'></ContinueButton>
+        <ContinueButton placeholder={'Continue'} className='result-continue-btn' onClick={handleButtonClick}></ContinueButton>
       </section>
       
     </div>

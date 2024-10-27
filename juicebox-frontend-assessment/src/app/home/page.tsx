@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./home.scss";
 import '../../styles/modules/typography.scss';
@@ -6,8 +7,15 @@ import Image from "next/image";
 import RoundedHexagon from "../../assets/icons/rounded-hexagon.png";
 import Navbar from "../components/navbar/Navbar";
 import ContinueButton from "../components/buttons/ContinueButton";
+import { useRouter } from "next/navigation";
 
 const PublicHomepage = () => {
+  const router = useRouter(); 
+
+  const handleButtonClick = () => {
+    router.push('/tutorials'); 
+  };
+  
   return (
     <div>
       <Navbar></Navbar>
@@ -30,7 +38,7 @@ const PublicHomepage = () => {
         </section>
 
         <section className="bottom-section">
-          <ContinueButton placeholder={"Get a reality check"} className="reality-check-btn"></ContinueButton>  
+          <ContinueButton placeholder={"Get a reality check"} className="reality-check-btn" onClick={handleButtonClick}></ContinueButton>  
         </section>
     </div>
   );
