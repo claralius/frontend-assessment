@@ -9,11 +9,30 @@ import Navbar from "../components/navbar/Navbar";
 import ContinueButton from "../components/buttons/ContinueButton";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
+import Lenis from "lenis";
 
 const PublicHomepage = () => {
   const router = useRouter(); 
   const midSectionRef = useRef<HTMLDivElement>(null);
   const textSectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2, 
+      easing: (t) => Math.min(1, 1.5 * t),
+    });
+
+    const update = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(update);
+    };
+
+    requestAnimationFrame(update); 
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   const handleButtonClick = () => {
     router.push('/tutorials'); 
@@ -26,7 +45,7 @@ const PublicHomepage = () => {
       duration: 1,
       ease: "power1.inOut",
     });
-    
+
     gsap.from(textSectionRef.current, {
       opacity: 0,
       y: 50,

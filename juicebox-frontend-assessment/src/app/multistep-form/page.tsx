@@ -22,7 +22,6 @@ const MultiStepFormPage = () => {
   const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(true);
   const router = useRouter();
-  
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
