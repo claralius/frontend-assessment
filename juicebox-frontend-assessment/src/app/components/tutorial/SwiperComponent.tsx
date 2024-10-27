@@ -12,30 +12,33 @@ import RoundedHexagon from "../../../assets/icons/rounded-hexagon.png";
 import { useEffect, useImperativeHandle, useRef } from "react";
 import React from "react";
 
-interface SwiperComponentProps{
-  onSlideChange? : (swiper: SwiperCore | null) => void;
+interface SwiperComponentProps {
+  onSlideChange?: (swiper: SwiperCore | null) => void;
 }
 
-const SwiperComponent = React.forwardRef<SwiperCore | null, SwiperComponentProps>(({onSlideChange}, ref) => {
+const SwiperComponent = React.forwardRef<
+  SwiperCore | null,
+  SwiperComponentProps
+>(({ onSlideChange }, ref) => {
   // const { onSlideChange } = props;
   const swiperRef = useRef<SwiperCore | null>(null);
 
   useImperativeHandle(ref, () => swiperRef.current as SwiperCore);
 
-  useEffect(()=>{
-    if(swiperRef.current && onSlideChange){
-      swiperRef.current.on("slideChange", ()=>{
+  useEffect(() => {
+    if (swiperRef.current && onSlideChange) {
+      swiperRef.current.on("slideChange", () => {
         onSlideChange(swiperRef.current);
       });
     }
 
-    return ()=>{
-        if (swiperRef.current && onSlideChange) {
-          swiperRef.current.off("slideChange");
-        }
+    return () => {
+      if (swiperRef.current && onSlideChange) {
+        swiperRef.current.off("slideChange");
+      }
     };
   }, [onSlideChange]);
-  
+
   return (
     <Swiper
       onSwiper={(swiper) => (swiperRef.current = swiper)}
