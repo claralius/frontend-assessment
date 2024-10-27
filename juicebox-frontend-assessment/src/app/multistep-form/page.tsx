@@ -4,6 +4,7 @@ import "./form.scss";
 import Navbar from "../components/navbar/Navbar";
 import Lottie from "lottie-react";
 import JB2G from "../../assets/lottie/JB2G_Lottie.json";
+import InputField from "../components/form/InputField";
 
 const SendButtonSVG = () => (
   <svg width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,21 +56,23 @@ const MultiStepFormPage = () => {
       <section className="form-section">
         <form onSubmit={handleNextStep} action="" className={`input-form ${!isValid ? 'invalid' : ''}`}>
           { step === 1?(
-            <input
-             type="text"
-             name="name"
-             placeholder="First name"
-             value={name}
-             onChange={handleInputChange}
-           />
+            <InputField
+              type="text"
+              name="name"
+              placeholder="First name"
+              value={name}
+              onChange={handleInputChange}
+              isValid={isValid}
+            />
           ):(
-            <input
-             type="email"
-             name="email"
-             placeholder="Email address"
-             value={email}
-             onChange={handleInputChange}
-           />
+            <InputField
+              type="email"
+              name="email"
+              placeholder="Email address"
+              value={email}
+              onChange={handleInputChange}
+              isValid={isValid}
+            />
           )}
           <button type="submit">
             <div className={`send-button ${name ? 'active' : ''}`} style={{ color: name ? 'white' : 'gray' }}>
