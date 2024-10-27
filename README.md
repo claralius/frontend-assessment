@@ -24,9 +24,7 @@ Follow these steps to set up the project locally:
    npm install
 
 ## Running the Project
-To run the project locally, use the following command:
-   ```bash
-   npm run dev
+To run the project: ```bash npm run dev
 
 ## Assumptions
 These are several assumptions and details that I have made when doing this project:
