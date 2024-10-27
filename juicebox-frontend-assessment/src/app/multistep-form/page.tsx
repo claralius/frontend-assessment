@@ -23,12 +23,7 @@ const MultiStepFormPage = () => {
     const nameRegex = /^[A-Za-z]+$/;
 
     setName(value);
-
-    if (nameRegex.test(value) || value === "") {
-      setIsValid(true);
-    } else {
-      setIsValid(false);
-    }
+    setIsValid(nameRegex.test(value) || value === '');
   };
 
   return (

@@ -51,16 +51,16 @@ body {
         border: 1px solid white;
         border-radius: 18px;
         position: absolute;
-        bottom: 20px;
+        bottom: 50px;
+
+        &.invalid {
+            border: 1px solid red; 
+        }
 
         .input-text{
             width: 100%;
             display: flex;
             justify-content: space-between;
-        }
-
-        &.invalid {
-            border: 1px solid red; /* Change the border color to red */
         }
     
         input {
@@ -113,11 +113,10 @@ body {
         .invalid-input{
             border: 1px solid red;
         }
-
-        .error-message {
-            color: red; 
-            margin-top: 8px; 
-        }
     }
-    
+    .error-message {
+        color: red; 
+        z-index: 100;
+        margin-top: 8px; 
+    }
 }
