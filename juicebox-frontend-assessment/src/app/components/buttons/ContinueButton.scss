@@ -1,12 +1,19 @@
 @use "../../../styles/modules/typography.scss" as type;
 @use "../../../styles/modules/colors.scss" as colors;
+@use "../../../styles/modules/sizes.scss" as sizes;
 
 .continue-button {
-  width: 350px;
+  width: 85vw;
   height: 60px;
   text-align: center;
   padding: 24px auto;
   border-radius: 19px;
+  font-family: 'Sohne', sans-serif;
+  font-size: clamp(14px, 1.6vw, 16px);
+  font-weight: 400;
+  line-height: 21.6px;
+  letter-spacing: 0.02em;
+  text-align: center;
 
   &.reality-check-btn {
     color: colors.$dark-black;
@@ -19,8 +26,30 @@
     border: 1px solid var(--Line-line-stroke-medium, rgba(255, 255, 255, 0.6))
   }
 
+  &.result-continue-btn {
+    background-color: colors.$ivory-white;
+  }
+
   &.get-started-btn {
     background-color: colors.$ivory-white;
     color: colors.$dark-black;
+  }
+}
+
+@media screen and (min-width: sizes.$xs) { 
+  .continue-button{
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: sizes.$sm) { 
+  .continue-button{
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: sizes.$md) { 
+  .continue-button{
+    width: 350px;
   }
 }

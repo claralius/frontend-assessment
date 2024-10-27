@@ -10,7 +10,7 @@ type ContinueButtonProp = {
 const ContinueButton = ({ placeholder, className, onClick }: ContinueButtonProp) => {
   return (
     <div>
-      <button className={`continue-button ${className}`} onClick={onClick}>{placeholder}</button>
+      <button className= {`continue-button ${className}`} onClick={onClick}>{placeholder}</button>
     </div>
   );
 };

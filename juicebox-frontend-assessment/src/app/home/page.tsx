@@ -1,6 +1,5 @@
 import React from "react";
 import "./home.scss";
-import '../../styles/modules/typography.scss';
 import Link from "next/link";
 import Image from "next/image";
 import RoundedHexagon from "../../assets/icons/rounded-hexagon.png";

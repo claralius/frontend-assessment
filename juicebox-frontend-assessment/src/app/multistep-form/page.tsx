@@ -5,6 +5,7 @@ import Navbar from "../components/navbar/Navbar";
 import Lottie from "lottie-react";
 import JB2G from "../../assets/lottie/JB2G_Lottie.json";
 import InputField from "../components/form/InputField";
+import { useRouter } from "next/navigation";
 
 const SendButtonSVG = () => (
   <svg width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,6 +21,8 @@ const MultiStepFormPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(true);
+  const router = useRouter();
+  
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -32,6 +35,7 @@ const MultiStepFormPage = () => {
     }else if(step == 2){
       setEmail(value);
       console.log("email", value);
+      setIsValid(value.includes('@'));
     }
   };
 
@@ -39,6 +43,8 @@ const MultiStepFormPage = () => {
     e.preventDefault();
     if (step === 1 && isValid) {
       setStep(2); 
+    }else if(step === 2 && isValid){
+      router.push(`/multistep-form/result?name=${encodeURIComponent(name)}`);
     }
   }
 

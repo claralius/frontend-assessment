@@ -88,7 +88,7 @@
     }
 }
 
-@media screen and (min-width: sizes.$sm) { //640px
+@media screen and (min-width: sizes.$sm) { //>640px
     .mid-section{
         display: flex;
         flex-direction: column;
@@ -109,7 +109,7 @@
     }
 }
 
-@media screen and (min-width: sizes.$md) { //768
+@media screen and (min-width: sizes.$md) { //>768px
     .mid-section{
         .hexagon-image{
             width: 214px;

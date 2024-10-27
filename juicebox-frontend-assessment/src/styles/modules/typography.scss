@@ -2,37 +2,35 @@
 
 @font-face {
     font-family: 'BagossTrial';
-    src: url('/fonts/BagossTRIAL/BagossStandardTRIAL-Regular.ttf') format('truetype'); 
+    src: url('/fonts/Bagoss/BagossTRIALVF.ttf') format('truetype'); 
     font-weight: 400; 
     font-style: normal; 
 }
 
 @font-face {
     font-family: 'Sohne';
-    src: url('/fonts/Sohne/TestSohne-Leicht.otf') format('opentype'); 
+    src: url('/fonts/Sohne/Sohne-Buche.otf') format('opentype'); 
     font-weight: 400; 
     font-style: normal; 
 }
 
-p{
-    .caption-text{
-        font-family: 'Sohne', sans-serif;
-        font-size: clamp(12px, 1.2vw, 14px);
-        font-weight: 400;
-        line-height: 16.2px;
-        letter-spacing: 0.02em;
-        text-align: left;
-    }
-    
-    .body-text{
-        font-family: 'Sohne', sans-serif;
-        font-size: clamp(14px, 1.6vw, 16px);
-        font-weight: 400;
-        line-height: 21.6px;
-        letter-spacing: 0.02em;
-        text-align: left;
-    }   
+
+.caption-text{
+    font-family: 'Sohne', sans-serif;
+    font-size: clamp(12px, 1.2vw, 14px);
+    font-weight: 400;
+    line-height: 16.2px;
+    letter-spacing: 0.02em;
 }
+
+.body-text{
+    font-family: 'Sohne', sans-serif;
+    font-size: clamp(14px, 1.6vw, 16px);
+    font-weight: 400;
+    line-height: 21.6px;
+    letter-spacing: 0.02em;
+}   
+
 
 h2{
     font-family: 'BagossTrial', sans-serif;
