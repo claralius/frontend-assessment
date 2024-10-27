@@ -1,0 +1,33 @@
+@use "../../styles/modules/typography.scss";
+@use "../../styles/modules/sizes.scss" as sizes;
+
+body {
+    height: 100vh; 
+    margin: 0; 
+}
+
+.formpage-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%; 
+}
+
+.result-text-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    padding: 24px 20px;
+    gap: 32px;
+
+    .lottie-animation{
+        width: 29px;
+        height: auto;
+    }
+
+    .result-text{
+        color: white;
+    }
+}
