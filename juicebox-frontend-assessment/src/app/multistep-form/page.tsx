@@ -15,16 +15,31 @@ const SendButtonSVG = () => (
 );
 
 const MultiStepFormPage = () => {
+  const [step, setStep] = useState(1);
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(true);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     const nameRegex = /^[A-Za-z]+$/;
 
-    setName(value);
-    setIsValid(nameRegex.test(value) || value === '');
+    if(step == 1){
+      setName(value);
+      console.log("name", value);
+      setIsValid(nameRegex.test(value) || value === '');
+    }else if(step == 2){
+      setEmail(value);
+      console.log("email", value);
+    }
   };
+
+  const handleNextStep = (e: React.MouseEvent<HTMLFormElement>) =>{
+    e.preventDefault();
+    if (step === 1 && isValid) {
+      setStep(2); 
+    }
+  }
 
   return (
     <div className="formpage-layout">
@@ -32,21 +47,35 @@ const MultiStepFormPage = () => {
       <section className="question-section">
         <Lottie animationData={JB2G} className="lottie-animation" />
         <h5 className="form-question">
-          Let's start with the basics. Type in your first name.
+        {step === 1
+            ? "Let's start with the basics. Type in your first name."
+            : "How should we contact you? Type in your email address."}
         </h5>
       </section>
       <section className="form-section">
-        <form action="" className={`input-form ${!isValid ? 'invalid' : ''}`}>
-          <input
-            type="text"
-            name="name"
-            placeholder="First name"
-            value={name}
-            onChange={handleInputChange}
-          />
-          <div className={`send-button ${name ? 'active' : ''}`} style={{ color: name ? 'white' : 'gray' }}>
-            <SendButtonSVG />
-          </div>
+        <form onSubmit={handleNextStep} action="" className={`input-form ${!isValid ? 'invalid' : ''}`}>
+          { step === 1?(
+            <input
+             type="text"
+             name="name"
+             placeholder="First name"
+             value={name}
+             onChange={handleInputChange}
+           />
+          ):(
+            <input
+             type="email"
+             name="email"
+             placeholder="Email address"
+             value={email}
+             onChange={handleInputChange}
+           />
+          )}
+          <button type="submit">
+            <div className={`send-button ${name ? 'active' : ''}`} style={{ color: name ? 'white' : 'gray' }}>
+              <SendButtonSVG />
+            </div>
+          </button>
         </form>
         {!isValid && <p className='error-message'>Invalid input. Only letters are allowed.</p>}
       </section>
