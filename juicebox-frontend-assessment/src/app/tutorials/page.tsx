@@ -21,7 +21,7 @@ const TutorialPage = () => {
       if (currentIndex < totalSlides - 1) {
         swiperRef.current.slideNext(); // Navigate to the next slide
       } else {
-        router.push("/tutorials"); 
+        router.push("/multistep-form"); 
       }
     }
   };
@@ -41,13 +41,11 @@ const TutorialPage = () => {
         <SwiperComponent ref={swiperRef} onSlideChange={handleSlideChange} />
       </section>
       <section className="bottom-section">
-        <Link href="/tutorials">
-          <ContinueButton
-            placeholder={isLastSlide ? "Get Started" : "Continue"}
-            className={isLastSlide? "get-started-btn" : "continue-btn"}
-            onClick={handleNextSlide}
-          ></ContinueButton>
-        </Link>
+        <ContinueButton
+          placeholder={isLastSlide ? "Get Started" : "Continue"}
+          className={isLastSlide? "get-started-btn" : "continue-btn"}
+          onClick={handleNextSlide}
+        ></ContinueButton>
       </section>
     </>
   );
