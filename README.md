@@ -17,7 +17,8 @@ Follow these steps to set up the project locally:
 
 2. **Navigate into the project directory**:
     ```bash
-      cd juicebox-frontend-assessment
+    cd frontend-assessment
+    cd juicebox-frontend-assessment
 
 3. **Install dependencies**:
    ```bash
