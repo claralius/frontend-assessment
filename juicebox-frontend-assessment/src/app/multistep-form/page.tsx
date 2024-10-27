@@ -26,7 +26,7 @@ const MultiStepFormPage = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    const nameRegex = /^[A-Za-z]+$/;
+    const nameRegex = /^[^\s][A-Za-z\s]*$/;
 
     if(step == 1){
       setName(value);
@@ -86,7 +86,7 @@ const MultiStepFormPage = () => {
             </div>
           </button>
         </form>
-        {!isValid && <p className='error-message'>Invalid input. Only letters are allowed.</p>}
+        {!isValid && <p className='error-message'>Invalid input. Only letters are allowed and doesn't start with whitespace.</p>}
       </section>
     </div>
   );

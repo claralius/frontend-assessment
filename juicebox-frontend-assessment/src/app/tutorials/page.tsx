@@ -1,9 +1,8 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SwiperComponent from "../components/tutorial/SwiperComponent";
 import Navbar from "../components/navbar/Navbar";
 import "./tutorial.scss";
-import Link from "next/link";
 import ContinueButton from "../components/buttons/ContinueButton";
 import { useRouter } from 'next/navigation'
 import Swiper from "swiper";
@@ -19,7 +18,7 @@ const TutorialPage = () => {
       const totalSlides = swiperRef.current.slides ? swiperRef.current.slides.length : 0; 
       
       if (currentIndex < totalSlides - 1) {
-        swiperRef.current.slideNext(); // Navigate to the next slide
+        swiperRef.current.slideNext();
       } else {
         router.push("/multistep-form"); 
       }
@@ -34,6 +33,7 @@ const TutorialPage = () => {
       setIsLastSlide(currentIndex === totalSlides - 1);
     }
   };
+
   return (
     <>
       <Navbar></Navbar>

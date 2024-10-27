@@ -20,7 +20,6 @@ const SwiperComponent = React.forwardRef<
   SwiperCore | null,
   SwiperComponentProps
 >(({ onSlideChange }, ref) => {
-  // const { onSlideChange } = props;
   const swiperRef = useRef<SwiperCore | null>(null);
 
   useImperativeHandle(ref, () => swiperRef.current as SwiperCore);
