@@ -5,9 +5,13 @@
   justify-content: space-between;
   padding: 20px;
 
+  .back-button-placeholder{
+    width: 86px;
+    height: 86px;
+  }
+  
   .company-logo-section {
     width: max-content;
     height: fit-content;
-    
   }
 }
