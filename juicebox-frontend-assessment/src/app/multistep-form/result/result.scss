@@ -1,12 +1,12 @@
-@use "../../styles/modules/typography.scss";
-@use "../../styles/modules/sizes.scss" as sizes;
+@use "../../../styles/modules/typography.scss";
+@use "../../../styles/modules/sizes.scss" as sizes;
 
 body {
     height: 100vh; 
     margin: 0; 
 }
 
-.formpage-layout {
+.resultpage-layout {
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
@@ -30,4 +30,13 @@ body {
     .result-text{
         color: white;
     }
+}
+
+.result-bottom-section{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+    height: 100%;
+    padding: 24px 20px;
 }
