@@ -1,5 +1,6 @@
 import React from "react";
 import "./home.scss";
+import '../../styles/modules/typography.scss';
 import Link from "next/link";
 import Image from "next/image";
 import RoundedHexagon from "../../assets/icons/rounded-hexagon.png";
@@ -29,9 +30,7 @@ const PublicHomepage = () => {
         </section>
 
         <section className="bottom-section">
-          <Link href="/tutorials">
-            <ContinueButton placeholder={"Get a reality check"} className="reality-check-btn"></ContinueButton>  
-          </Link>
+          <ContinueButton placeholder={"Get a reality check"} className="reality-check-btn"></ContinueButton>  
         </section>
     </div>
   );
