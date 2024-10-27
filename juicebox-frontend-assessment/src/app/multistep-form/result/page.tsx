@@ -1,13 +1,18 @@
 "use client";
 import Navbar from '@/app/components/navbar/Navbar'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Lottie from "lottie-react";
 import JB2G from "../../../assets/lottie/JB2G_Lottie.json";
 import "./result.scss";
 import ContinueButton from '@/app/components/buttons/ContinueButton';
 
 const ResultPage = () => {
-    const name = new URLSearchParams(window.location.search).get('name');
+    const [name, setName] = useState<string | null>(null);
+
+    useEffect(()=>{
+        const nameParam = new URLSearchParams(window.location.search).get('name');
+        setName(nameParam);
+    },[]);
   return (
     <div className="resultpage-layout">
       <Navbar></Navbar>
