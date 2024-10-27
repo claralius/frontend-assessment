@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import "./home.scss";
 import '../../styles/modules/typography.scss';
 import Link from "next/link";
@@ -19,18 +19,20 @@ const PublicHomepage = () => {
     router.push('/tutorials'); 
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.from(midSectionRef.current, {
       opacity: 0,
       y: 50,
       duration: 1,
       ease: "power1.inOut",
     });
+    
     gsap.from(textSectionRef.current, {
       opacity: 0,
       y: 50,
       duration: 1,
       ease: "power1.inOut",
+      delay: 0.5
     });
   }, []);
   
