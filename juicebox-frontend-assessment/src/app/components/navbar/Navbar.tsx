@@ -12,8 +12,6 @@ const Navbar = () => {
   return (
     <div className="navbar-section">
       {pathname !== "/homepage" ? <BackButton /> : <div className="back-button-placeholder" />}
-      {/* <BackButton></BackButton> */}
-      {/* <div></div> */}
       <span className="company-logo-section">
         <Image src={JuiceboxLogo} alt={"juicebox-logo"} />
       </span>
