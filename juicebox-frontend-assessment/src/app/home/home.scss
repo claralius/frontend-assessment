@@ -1,0 +1,118 @@
+@use "../../styles/modules/typography.scss";
+@use "../../styles/modules/sizes.scss" as sizes;
+
+* {
+  color: white;
+}
+
+.mid-section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 48px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 28px auto;
+    margin-top: 28px;
+    margin-bottom: 28px;
+
+    .mid-text-left{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        gap: 86px;
+        left: 0;
+        top: 0;
+        transform: translateY(20%);
+        margin-left: 20px;
+        text-align: left;
+    }
+
+    .mid-text-right{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        gap: 130px;
+        right: 0;
+        top: 2rem;
+        bottom: 12rem;
+        transform: translateY(50%);
+        margin-right: 20px;
+        text-align: right;
+    }
+
+    .hexagon-image {
+        width: 274px;
+        height: auto;
+        margin: 0 auto;
+    }   
+}
+
+.text-section{
+    padding: 20px;
+    margin: 20px auto 20px auto;
+    h2{
+        text-align: center;
+        white-space: normal;
+        span{
+            color: transparent;
+            background-clip: text;
+            background-image: linear-gradient(90deg, #FABBFF 0%, #B179FF 35%, #6DDDFF 83%);
+        }
+    }
+}
+
+.bottom-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 24px auto;
+}
+
+@media screen and (max-width: sizes.$xs) { //<475px
+    .mid-section {
+        font-size: 12px;
+    }
+    h2 {
+        font-size: 16px; 
+        line-height: 1.5;
+    }
+}
+
+@media screen and (min-width: sizes.$xs) { //>475px
+    .mid-section {
+        .hexagon-image{
+            width: 254px;
+        }
+    }
+}
+
+@media screen and (min-width: sizes.$sm) { //>640px
+    .mid-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .mid-text-left,
+        .mid-text-right {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin: 10px 0;
+        gap: 10px; 
+        }
+
+        .hexagon-image{
+            width: 234px;
+        }
+    }
+}
+
+@media screen and (min-width: sizes.$md) { //>768px
+    .mid-section{
+        .hexagon-image{
+            width: 214px;
+        }
+    }
+}
