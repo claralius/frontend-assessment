@@ -11,7 +11,7 @@ const Navbar = () => {
   const pathname = usePathname();
   return (
     <div className="navbar-section">
-      {pathname !== "/homepage" ? <BackButton /> : <div className="back-button-placeholder" />}
+      {pathname !== "/home" ? <BackButton /> : <div className="back-button-placeholder" />}
       <span className="company-logo-section">
         <Image src={JuiceboxLogo} alt={"juicebox-logo"} />
       </span>
