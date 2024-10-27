@@ -12,12 +12,30 @@ import RoundedHexagon from "../../../assets/icons/rounded-hexagon.png";
 import { useEffect, useImperativeHandle, useRef } from "react";
 import React from "react";
 
+interface SwiperComponentProps{
+  onSlideChange? : (swiper: SwiperCore | null) => void;
+}
 
-const SwiperComponent = React.forwardRef((props, ref) => {
+const SwiperComponent = React.forwardRef<SwiperCore | null, SwiperComponentProps>((props, ref) => {
+  const { onSlideChange } = props;
   const swiperRef = useRef<SwiperCore | null>(null);
 
-  // Expose swiperRef methods to parent component
-  useImperativeHandle(ref, () => swiperRef.current);
+  useImperativeHandle(ref, () => swiperRef.current as SwiperCore);
+
+  useEffect(()=>{
+    if(swiperRef.current && onSlideChange){
+      swiperRef.current.on("slideChange", ()=>{
+        onSlideChange(swiperRef.current);
+      });
+    }
+
+    return ()=>{
+        if (swiperRef.current && onSlideChange) {
+          swiperRef.current.off("slideChange");
+        }
+    };
+  }, [onSlideChange]);
+  
   return (
     <Swiper
       onSwiper={(swiper) => (swiperRef.current = swiper)}

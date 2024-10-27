@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import SwiperComponent from "../components/tutorial/SwiperComponent";
 import Navbar from "../components/navbar/Navbar";
 import "./tutorial.scss";
@@ -9,31 +9,42 @@ import { useRouter } from 'next/navigation'
 import Swiper from "swiper";
 
 const TutorialPage = () => {
-  const swiperRef = useRef<Swiper | null>(null); // Ref for the Swiper instance
-  const router = useRouter(); // Get router instance
+  const swiperRef = useRef<Swiper | null>(null);
+  const router = useRouter();
+  const[isLastSlide, setIsLastSlide] = useState(false);
+
   const handleNextSlide = () => {
     if (swiperRef.current) {
-      const currentIndex = swiperRef.current.activeIndex; // Get current slide index
-      const totalSlides = swiperRef.current.slides ? swiperRef.current.slides.length : 0; // Get total number of slides
+      const currentIndex = swiperRef.current.activeIndex; 
+      const totalSlides = swiperRef.current.slides ? swiperRef.current.slides.length : 0; 
       
       if (currentIndex < totalSlides - 1) {
         swiperRef.current.slideNext(); // Navigate to the next slide
       } else {
-        router.push("/tutorials"); // Navigate to tutorials page if it's the last slide
+        router.push("/tutorials"); 
       }
+    }
+  };
+
+  const handleSlideChange = () =>{
+    if(swiperRef.current){
+      const currentIndex = swiperRef.current.activeIndex;
+      const totalSlides = swiperRef.current.slides? swiperRef.current.slides.length : 0;
+      console.log(currentIndex);
+      setIsLastSlide(currentIndex === totalSlides - 1);
     }
   };
   return (
     <>
       <Navbar></Navbar>
       <section className="tutorial-mid-section">
-        <SwiperComponent ref={swiperRef} />
+        <SwiperComponent ref={swiperRef} onSlideChange={handleSlideChange} />
       </section>
       <section className="bottom-section">
         <Link href="/tutorials">
           <ContinueButton
-            placeholder={"Continue"}
-            className="continue-btn"
+            placeholder={isLastSlide ? "Get Started" : "Continue"}
+            className={isLastSlide? "get-started-btn" : "continue-btn"}
             onClick={handleNextSlide}
           ></ContinueButton>
         </Link>

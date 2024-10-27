@@ -18,4 +18,9 @@
     background-color: transparent;
     border: 1px solid var(--Line-line-stroke-medium, rgba(255, 255, 255, 0.6))
   }
+
+  &.get-started-btn {
+    background-color: colors.$ivory-white;
+    color: colors.$dark-black;
+  }
 }
