@@ -5,11 +5,22 @@
   width: 350px;
   height: 60px;
   text-align: center;
-  padding: 19px auto;
-  border-radius: 10px;
+  padding: 24px auto;
+  border-radius: 19px;
 
   &.reality-check-btn {
     color: colors.$dark-black;
     background-color: colors.$purple-light;
+  }
+
+  &.continue-btn {
+    color: colors.$ivory-white;
+    background-color: transparent;
+    border: 1px solid var(--Line-line-stroke-medium, rgba(255, 255, 255, 0.6))
+  }
+
+  &.get-started-btn {
+    background-color: colors.$ivory-white;
+    color: colors.$dark-black;
   }
 }

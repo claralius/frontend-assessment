@@ -4,12 +4,13 @@ import "./ContinueButton.scss";
 type ContinueButtonProp = {
   placeholder: string;
   className?: string;
+  onClick?: () => void;
 };
 
-const ContinueButton = ({ placeholder, className }: ContinueButtonProp) => {
+const ContinueButton = ({ placeholder, className, onClick }: ContinueButtonProp) => {
   return (
     <div>
-      <button className={`continue-button ${className}`}>{placeholder}</button>
+      <button className={`continue-button ${className}`} onClick={onClick}>{placeholder}</button>
     </div>
   );
 };
