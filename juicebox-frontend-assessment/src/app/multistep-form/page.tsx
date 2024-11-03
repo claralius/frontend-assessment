@@ -54,7 +54,7 @@ const MultiStepFormPage = () => {
         <Lottie animationData={JB2G} className="lottie-animation" />
         <h5 className="form-question">
         {step === 1
-            ? "Let's start with the basics. Type in your first name."
+            ? "Let&apos;s start with the basics. Type in your first name."
             : "How should we contact you? Type in your email address."}
         </h5>
       </section>
@@ -85,7 +85,7 @@ const MultiStepFormPage = () => {
             </div>
           </button>
         </form>
-        {!isValid && <p className='error-message'>Invalid input. Only letters are allowed and doesn't start with whitespace.</p>}
+        {!isValid && <p className='error-message'>Invalid input. Only letters are allowed and doesn&apos;t start with whitespace.</p>}
       </section>
     </div>
   );

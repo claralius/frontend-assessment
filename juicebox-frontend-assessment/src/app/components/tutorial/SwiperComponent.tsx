@@ -60,7 +60,7 @@ const SwiperComponent = React.forwardRef<
           <span className="tutorial-text-span">
             Professionals around the world shared how they feel abo
           </span>
-          ut technology and I’ve listened. Now it’s your turn.
+          ut technology and I&apos;ve listened. Now it&apos;s your turn.
         </h4>
       </SwiperSlide>
       <SwiperSlide className="second-slide">
@@ -71,7 +71,7 @@ const SwiperComponent = React.forwardRef<
         />
         <h4 className="tutorial-text">
           <span className="tutorial-text-span">
-            I’ll ask you a handful of meaningful questions
+            I&apos;ll ask you a handful of meaningful questions
           </span>
           &nbsp; and compare your responses with people in your industry. 
         </h4>
@@ -84,7 +84,7 @@ const SwiperComponent = React.forwardRef<
         />
         <h4 className="tutorial-text">
           <span className="tutorial-text-span">
-            You’ll get insights into current industry sentiments an
+            You&apos;ll get insights into current industry sentiments an
           </span>
           d a reality check about technology in a few minutes. Deal? Great!
         </h4>
@@ -93,4 +93,5 @@ const SwiperComponent = React.forwardRef<
   );
 });
 
+SwiperComponent.displayName = "SwiperComponent";
 export default SwiperComponent;
